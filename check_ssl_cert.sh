@@ -17,7 +17,7 @@ fi
 
 servername=$1
 
-end_date="$(curl -vI https://$servername 2>&1 | sed -n 's/.*expire date: //p')"
+end_date="$(curl -vkI https://$servername 2>&1 | sed -n 's/.*expire date: //p')"
 
 if [ -n "$end_date" ]
 then
